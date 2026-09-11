@@ -5,136 +5,49 @@
 }
 
 body {
-    background-color: #f7aef8; /* Hot pink background */
-    font-family: 'Comic Neue', cursive, sans-serif;
+    background-color: #f7aef8; /* Signature hot pink */
+    font-family: 'Fredoka', cursive, sans-serif; /* Thick bubble letter font */
     display: flex;
     justify-content: center;
-    padding: 20px 10px;
-    color: #000;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
 }
 
-/* Main Container Frame */
-.window {
-    width: 100%;
-    max-width: 440px;
+.wrapper {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    gap: 15px;
 }
 
-/* Header */
-.hero-header {
-    text-align: center;
-}
-
-.sparkle-title {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 1.1rem;
-    color: #ff007a;
-    text-shadow: 2px 2px #000;
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-.hero-banner {
-    background-color: #fbe72c;
-    border: 3px solid #000;
-    border-radius: 8px;
-    padding: 8px;
+/* Giant Bubble Text Effect */
+.bubble-title {
+    font-size: clamp(3.5rem, 10vw, 7rem);
     font-weight: 700;
-    font-size: 0.85rem;
-    box-shadow: 3px 3px 0px #000;
+    letter-spacing: 2px;
+    color: #ffffff;
+    /* Multilayered black bubble drop shadow & outline */
+    text-shadow: 
+        -4px -4px 0 #000,  
+         4px -4px 0 #000,
+        -4px  4px 0 #000,
+         4px  4px 0 #000,
+         8px  8px 0px #000000;
+    line-height: 1.0;
 }
 
-/* Metrics Grid */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.metric-box {
-    background-color: #fff;
-    border: 3px solid #000;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 3px 3px 0px #000;
-}
-
-.span-2 {
-    grid-column: span 2;
-}
-
-.pink-bg {
-    background-color: #ffc2d1;
-}
-
-.metric-title {
-    font-size: 0.8rem;
-    color: #444;
-}
-
-.metric-value {
-    font-size: 1.2rem;
+/* Subtitle Bubble Text */
+.bubble-sub {
+    font-size: clamp(1.5rem, 4vw, 3rem);
     font-weight: 700;
-}
-
-/* Navigation Buttons Stack */
-.nav-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.nav-btn {
-    background-color: #b8c0ff;
-    border: 3px solid #000;
-    border-radius: 10px;
-    padding: 12px;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 3px 3px 0px #000;
-    text-align: left;
-    transition: transform 0.1s;
-}
-
-.nav-btn.active {
-    background-color: #e7c6ff;
-}
-
-.nav-btn:active {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0px #000;
-}
-
-/* Content Box */
-.content-card {
-    background-color: #fff;
-    border: 3px solid #000;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 3px 3px 0px #000;
-}
-
-.content-card h2 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-}
-
-.content-card p {
-    font-size: 0.95rem;
-}
-
-/* Footer */
-.footer-bar {
-    background-color: #bbd0ff;
-    border: 3px solid #000;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    font-weight: 700;
-    box-shadow: 3px 3px 0px #000;
+    color: #fbe72c; /* Bright pop yellow */
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         5px  5px 0px #000000;
 }
