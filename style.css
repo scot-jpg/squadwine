@@ -31,17 +31,25 @@ body {
     gap: 15px;
 }
 
-/* Bubbly title, Squad-Invest style: soft white shadow, no black outline */
+/* Big bubbly title: rounded font, thick outline, soft drop shadow */
 .bubble-title {
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 900;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(4.5rem, 14vw, 10rem);
+    font-weight: 800;
     letter-spacing: 2px;
-    color: var(--hot-pink);
-    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.7);
     line-height: 1.0;
+    color: #ffffff;
+    -webkit-text-stroke: 3px var(--hot-pink);
+    text-shadow:
+        -3px -3px 0 var(--hot-pink),
+         3px -3px 0 var(--hot-pink),
+        -3px  3px 0 var(--hot-pink),
+         3px  3px 0 var(--hot-pink),
+         6px  6px 0 rgba(74, 14, 78, 0.3);
 }
 
 .bubble-sub {
+    font-family: 'Baloo 2', sans-serif;
     font-size: clamp(1.5rem, 4vw, 3rem);
     font-weight: 700;
     color: var(--deep-purple);
