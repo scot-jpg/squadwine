@@ -4,15 +4,23 @@
     padding: 0;
 }
 
+:root {
+    --main-pink: #ff69b4;
+    --hot-pink: #ff1493;
+    --light-pink: #ffb6c1;
+    --pastel-purple: #e6e6fa;
+    --deep-purple: #4a0e4e;
+}
+
 body {
-    background-color: #f7aef8; /* Signature hot pink */
-    font-family: 'Fredoka', cursive, sans-serif; /* Thick bubble letter font */
+    background: #ffffff;
+    font-family: 'Nunito', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    color: #ffffff;
+    color: var(--deep-purple);
     text-align: center;
 }
 
@@ -23,31 +31,19 @@ body {
     gap: 15px;
 }
 
-/* Giant Bubble Text Effect */
+/* Bubbly title, Squad-Invest style: soft white shadow, no black outline */
 .bubble-title {
     font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 2px;
-    color: #ffffff;
-    /* Multilayered black bubble drop shadow & outline */
-    text-shadow: 
-        -4px -4px 0 #000,  
-         4px -4px 0 #000,
-        -4px  4px 0 #000,
-         4px  4px 0 #000,
-         8px  8px 0px #000000;
+    color: var(--hot-pink);
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.7);
     line-height: 1.0;
 }
 
-/* Subtitle Bubble Text */
 .bubble-sub {
     font-size: clamp(1.5rem, 4vw, 3rem);
     font-weight: 700;
-    color: #fbe72c; /* Bright pop yellow */
-    text-shadow: 
-        -2px -2px 0 #000,  
-         2px -2px 0 #000,
-        -2px  2px 0 #000,
-         2px  2px 0 #000,
-         5px  5px 0px #000000;
+    color: var(--deep-purple);
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.7);
 }
