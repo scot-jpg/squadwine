@@ -7,7 +7,6 @@
 :root {
     --wine-dark: #3a0016;
     --wine-pink: #ff1493;
-    --wine-light: #ff85c0;
     --cream-bg: #fff0f5;
 }
 
@@ -53,31 +52,40 @@ body {
     width: 18px;
 }
 
-.bubble-emoji {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    margin-left: 8px;
-}
-
-/* Force Massive Chubby Bubble Styling on Every Single Letter */
+/* Base Cartoon Bubble Letter Styling */
 .bubble-letter {
     font-family: 'Baloo 2', cursive, sans-serif !important;
-    font-size: clamp(2.8rem, 7vw, 4.8rem) !important;
+    font-size: clamp(3rem, 7vw, 5rem) !important;
     font-weight: 800 !important;
-    color: #ffffff !important;
     display: inline-block;
     line-height: 1;
-    /* Thick 3D Multi-Layered Outline & Shadow */
+    /* Thick White Border + Deep Dark Drop Shadow */
     text-shadow: 
-        -3px -3px 0 var(--wine-pink),
-         3px -3px 0 var(--wine-pink),
-        -3px  3px 0 var(--wine-pink),
-         3px  3px 0 var(--wine-pink),
-        -4px  0px 0 var(--wine-dark),
-         4px  0px 0 var(--wine-dark),
-         0px  5px 0 var(--wine-dark),
-         5px  8px 0px rgba(58, 0, 22, 0.4);
+        -4px -4px 0 #ffffff,
+         4px -4px 0 #ffffff,
+        -4px  4px 0 #ffffff,
+         4px  4px 0 #ffffff,
+        -5px  0px 0 #ffffff,
+         5px  0px 0 #ffffff,
+         0px -5px 0 #ffffff,
+         0px  5px 0 #ffffff,
+         6px  8px 0px var(--wine-dark);
     animation: liquidPour 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
+
+/* Colorful Cartoon Palette for Each Letter */
+.p1 { color: #ff70a6; } /* Pink */
+.o1 { color: #ff9e00; } /* Orange */
+.u  { color: #ffd60a; } /* Yellow */
+.r  { color: #70e000; } /* Lime Green */
+.i  { color: #00b4d8; } /* Cyan */
+.n1 { color: #9d4edd; } /* Purple */
+.g  { color: #ff4d6d; } /* Hot Pink */
+
+.s  { color: #ff70a6; } /* Pink */
+.o2 { color: #ff9e00; } /* Orange */
+.o3 { color: #ffd60a; } /* Yellow */
+.n2 { color: #70e000; } /* Lime Green */
 
 /* Staggered Delay: N (last letter) falls FIRST, P falls LAST */
 .n2 { animation-delay: 0.0s; }
@@ -99,7 +107,6 @@ body {
         opacity: 1;
     }
     65% {
-        /* Stretches long like a liquid drop as it falls */
         transform: translateY(110vh) scale(0.5, 2.2) rotate(10deg);
         opacity: 0.8;
     }
