@@ -5,16 +5,15 @@
 }
 
 :root {
-    --wine-dark: #3a0016;
+    --wine-dark: #2d0015;
     --wine-pink: #ff1493;
     --cream-bg: #fff0f5;
 }
 
 body {
     background: var(--cream-bg);
-    font-family: 'Fredoka', sans-serif !important;
+    font-family: 'Sniglet', cursive, sans-serif !important;
     font-style: normal !important;
-    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,60 +37,74 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0px 10px 15px rgba(58, 0, 22, 0.3));
+    filter: drop-shadow(0px 10px 15px rgba(45, 0, 21, 0.3));
 }
 
-/* Container for Bubble Text */
+/* Container for Balloon Text */
 .pouring-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1px;
+    gap: 4px;
 }
 
 .bubble-space {
-    width: 12px;
+    width: 14px;
 }
 
-/* Fredoka SemiBold Bubble Letter Styling */
+/* Bursting Balloon Letter Styling */
 .bubble-letter {
-    font-family: 'Fredoka', sans-serif !important;
+    font-family: 'Sniglet', cursive, sans-serif !important;
     font-style: normal !important;
-    font-size: clamp(2rem, 5.5vw, 3.5rem) !important;
-    font-weight: 600 !important;
+    font-size: clamp(2.2rem, 6vw, 3.8rem) !important;
+    font-weight: 800 !important;
     display: inline-block;
+    position: relative;
     line-height: 1;
-    letter-spacing: 1px;
-    /* White Border + Dark Drop Shadow */
+    padding: 0 2px;
+    /* Multilayered white bubble outline + thick grape 3D shadow */
     text-shadow: 
-        -3px -3px 0 #ffffff,
-         3px -3px 0 #ffffff,
-        -3px  3px 0 #ffffff,
-         3px  3px 0 #ffffff,
-        -4px  0px 0 #ffffff,
-         4px  0px 0 #ffffff,
-         0px -4px 0 #ffffff,
-         0px  4px 0 #ffffff,
-         5px  6px 0px var(--wine-dark);
+        -4px -4px 0 #ffffff,
+         4px -4px 0 #ffffff,
+        -4px  4px 0 #ffffff,
+         4px  4px 0 #ffffff,
+        -5px  0px 0 #ffffff,
+         5px  0px 0 #ffffff,
+         0px -5px 0 #ffffff,
+         0px  5px 0 #ffffff,
+         6px  8px 0px var(--wine-dark);
     animation: liquidPour 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
-/* Colorful Palette */
-.p1 { color: #ff70a6; } /* Pink */
-.o1 { color: #ff9e00; } /* Orange */
-.u  { color: #ffd60a; } /* Yellow */
-.r  { color: #70e000; } /* Lime Green */
-.i  { color: #00b4d8; } /* Cyan */
-.n1 { color: #9d4edd; } /* Purple */
-.g  { color: #ff4d6d; } /* Hot Pink */
+/* Glossy Highlight Reflection Effect on Top of Balloon Letters */
+.bubble-letter::after {
+    content: attr(data-char);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    color: transparent;
+    background: radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 50%);
+    -webkit-background-clip: text;
+    pointer-events: none;
+}
 
-.s  { color: #ff70a6; } /* Pink */
-.o2 { color: #ff9e00; } /* Orange */
-.o3 { color: #ffd60a; } /* Yellow */
-.n2 { color: #70e000; } /* Lime Green */
+/* Bursting Grape & Fruit Palette */
+.p1 { color: #ff007f; } /* Deep Magenta Grape */
+.o1 { color: #ff5400; } /* Juicy Orange */
+.u  { color: #ffbd00; } /* Yellow */
+.r  { color: #70e000; } /* Lime Grape */
+.i  { color: #00b4d8; } /* Berry Blue */
+.n1 { color: #9d4edd; } /* Dark Grape Purple */
+.g  { color: #ff0054; } /* Crimson */
 
-/* Reverse Staggered Delay */
+.s  { color: #ff007f; } /* Deep Magenta Grape */
+.o2 { color: #ff5400; } /* Juicy Orange */
+.o3 { color: #ffbd00; } /* Yellow */
+.n2 { color: #70e000; } /* Lime Grape */
+
+/* Reverse Staggered Delay (N falls first) */
 .n2 { animation-delay: 0.0s; }
 .o3 { animation-delay: 0.2s; }
 .o2 { animation-delay: 0.4s; }
@@ -104,18 +117,19 @@ body {
 .o1 { animation-delay: 1.8s; }
 .p1 { animation-delay: 2.0s; }
 
-/* Liquid Pour Keyframes (Straight vertical fall, no slant) */
+/* Liquid Pour Keyframes with Balloon Squeeze/Pop Feel */
 @keyframes liquidPour {
     0%, 45% {
         transform: translateY(0) scale(1, 1);
         opacity: 1;
     }
     65% {
-        transform: translateY(110vh) scale(0.5, 2.2);
+        /* Stretches long like a liquid drop as it falls */
+        transform: translateY(110vh) scale(0.4, 2.3);
         opacity: 0.8;
     }
     66% {
-        transform: translateY(-100px) scale(1, 1);
+        transform: translateY(-100px) scale(1.2, 0.8);
         opacity: 0;
     }
     78%, 100% {
