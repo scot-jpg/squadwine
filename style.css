@@ -5,15 +5,16 @@
 }
 
 :root {
-    --wine-dark: #2d0015;
-    --wine-pink: #ff1493;
-    --cream-bg: #fff0f5;
+    --wine-dark: #2a0010;
+    --wine-pink: #d81159;
+    --bg-pink: #ffc2d1;
 }
 
 body {
-    background: var(--cream-bg);
-    font-family: 'Sniglet', cursive, sans-serif !important;
+    background: var(--bg-pink);
+    font-family: 'Fredoka', sans-serif !important;
     font-style: normal !important;
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,84 +28,70 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     z-index: 10;
 }
 
 .squad-logo {
     width: 100%;
-    max-width: 520px;
+    max-width: 440px; /* Reduced image size slightly to keep text close */
     height: auto;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0px 10px 15px rgba(45, 0, 21, 0.3));
+    filter: drop-shadow(0px 8px 12px rgba(42, 0, 16, 0.25));
 }
 
-/* Container for Balloon Text */
+/* Container for Bubble Text */
 .pouring-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 4px;
+    flex-wrap: nowrap; /* Prevents awkward line breaking */
+    gap: 1px;
 }
 
 .bubble-space {
-    width: 14px;
+    width: 10px;
 }
 
-/* Bursting Balloon Letter Styling */
+/* Compact Bubble Letter Styling with High-Contrast Dark Outlines */
 .bubble-letter {
-    font-family: 'Sniglet', cursive, sans-serif !important;
+    font-family: 'Fredoka', sans-serif !important;
     font-style: normal !important;
-    font-size: clamp(2.2rem, 6vw, 3.8rem) !important;
-    font-weight: 800 !important;
+    font-size: clamp(1.4rem, 4vw, 2.4rem) !important; /* Scaled down significantly */
+    font-weight: 600 !important;
     display: inline-block;
-    position: relative;
     line-height: 1;
-    padding: 0 2px;
-    /* Multilayered white bubble outline + thick grape 3D shadow */
+    letter-spacing: 0.5px;
+    /* Dark maroon border + heavy bottom shadow to kill the all-white look */
     text-shadow: 
-        -4px -4px 0 #ffffff,
-         4px -4px 0 #ffffff,
-        -4px  4px 0 #ffffff,
-         4px  4px 0 #ffffff,
-        -5px  0px 0 #ffffff,
-         5px  0px 0 #ffffff,
-         0px -5px 0 #ffffff,
-         0px  5px 0 #ffffff,
-         6px  8px 0px var(--wine-dark);
+        -2px -2px 0 var(--wine-dark),
+         2px -2px 0 var(--wine-dark),
+        -2px  2px 0 var(--wine-dark),
+         2px  2px 0 var(--wine-dark),
+        -3px  0px 0 var(--wine-dark),
+         3px  0px 0 var(--wine-dark),
+         0px -3px 0 var(--wine-dark),
+         0px  3px 0 var(--wine-dark),
+         4px  5px 0px var(--wine-dark);
     animation: liquidPour 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
-/* Glossy Highlight Reflection Effect on Top of Balloon Letters */
-.bubble-letter::after {
-    content: attr(data-char);
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 2;
-    color: transparent;
-    background: radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 50%);
-    -webkit-background-clip: text;
-    pointer-events: none;
-}
+/* Vibrant Deep Color Palette for Letters */
+.p1 { color: #ff007f; } 
+.o1 { color: #ff6b00; } 
+.u  { color: #ffd000; } 
+.r  { color: #00b4d8; } 
+.i  { color: #9d4edd; } 
+.n1 { color: #ff0054; } 
+.g  { color: #70e000; } 
 
-/* Bursting Grape & Fruit Palette */
-.p1 { color: #ff007f; } /* Deep Magenta Grape */
-.o1 { color: #ff5400; } /* Juicy Orange */
-.u  { color: #ffbd00; } /* Yellow */
-.r  { color: #70e000; } /* Lime Grape */
-.i  { color: #00b4d8; } /* Berry Blue */
-.n1 { color: #9d4edd; } /* Dark Grape Purple */
-.g  { color: #ff0054; } /* Crimson */
+.s  { color: #ff007f; } 
+.o2 { color: #ff6b00; } 
+.o3 { color: #ffd000; } 
+.n2 { color: #00b4d8; } 
 
-.s  { color: #ff007f; } /* Deep Magenta Grape */
-.o2 { color: #ff5400; } /* Juicy Orange */
-.o3 { color: #ffbd00; } /* Yellow */
-.n2 { color: #70e000; } /* Lime Grape */
-
-/* Reverse Staggered Delay (N falls first) */
+/* Staggered Delay (N falls first, P falls last) */
 .n2 { animation-delay: 0.0s; }
 .o3 { animation-delay: 0.2s; }
 .o2 { animation-delay: 0.4s; }
@@ -117,19 +104,18 @@ body {
 .o1 { animation-delay: 1.8s; }
 .p1 { animation-delay: 2.0s; }
 
-/* Liquid Pour Keyframes with Balloon Squeeze/Pop Feel */
+/* Liquid Pour Keyframes */
 @keyframes liquidPour {
     0%, 45% {
         transform: translateY(0) scale(1, 1);
         opacity: 1;
     }
     65% {
-        /* Stretches long like a liquid drop as it falls */
-        transform: translateY(110vh) scale(0.4, 2.3);
+        transform: translateY(110vh) scale(0.5, 2.2);
         opacity: 0.8;
     }
     66% {
-        transform: translateY(-100px) scale(1.2, 0.8);
+        transform: translateY(-100px) scale(1, 1);
         opacity: 0;
     }
     78%, 100% {
@@ -158,11 +144,11 @@ body {
     animation: dripFall ease-in infinite;
 }
 
-.drip-1 { left: 8%;  width: 30px; height: 130px; animation-duration: 4.2s; animation-delay: 0.1s; }
-.drip-2 { left: 28%; width: 45px; height: 190px; animation-duration: 5.2s; animation-delay: 0.8s; }
-.drip-3 { left: 52%; width: 32px; height: 140px; animation-duration: 4.0s; animation-delay: 0.4s; }
-.drip-4 { left: 74%; width: 48px; height: 210px; animation-duration: 5.8s; animation-delay: 1.2s; }
-.drip-5 { left: 88%; width: 25px; height: 100px; animation-duration: 3.6s; animation-delay: 0.6s; }
+.drip-1 { left: 8%;  width: 25px; height: 110px; animation-duration: 4.2s; animation-delay: 0.1s; }
+.drip-2 { left: 28%; width: 38px; height: 160px; animation-duration: 5.2s; animation-delay: 0.8s; }
+.drip-3 { left: 52%; width: 28px; height: 120px; animation-duration: 4.0s; animation-delay: 0.4s; }
+.drip-4 { left: 74%; width: 40px; height: 180px; animation-duration: 5.8s; animation-delay: 1.2s; }
+.drip-5 { left: 88%; width: 22px; height: 90px;  animation-duration: 3.6s; animation-delay: 0.6s; }
 
 @keyframes dripFall {
     0% { transform: translateY(0) scaleY(1); opacity: 0.9; }
