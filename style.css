@@ -12,7 +12,9 @@
 
 body {
     background: var(--cream-bg);
-    font-family: 'Fredoka', cursive, sans-serif !important;
+    /* Rounded Sans-Serif / Display Category */
+    font-family: 'Fredoka', system-ui, -apple-system, sans-serif !important;
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,11 +54,11 @@ body {
     width: 12px;
 }
 
-/* Base Cartoon Bubble Letter Styling (Slightly Smaller & Fredoka Font) */
+/* Fredoka SemiBold Cartoon Bubble Letter Styling */
 .bubble-letter {
-    font-family: 'Fredoka', cursive, sans-serif !important;
+    font-family: 'Fredoka', system-ui, -apple-system, sans-serif !important;
     font-size: clamp(2rem, 5.5vw, 3.5rem) !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important; /* Locks Fredoka SemiBold */
     display: inline-block;
     line-height: 1;
     letter-spacing: 1px;
@@ -74,7 +76,7 @@ body {
     animation: liquidPour 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
-/* Colorful Cartoon Palette for Each Letter */
+/* Colorful Palette */
 .p1 { color: #ff70a6; } /* Pink */
 .o1 { color: #ff9e00; } /* Orange */
 .u  { color: #ffd60a; } /* Yellow */
@@ -88,7 +90,7 @@ body {
 .o3 { color: #ffd60a; } /* Yellow */
 .n2 { color: #70e000; } /* Lime Green */
 
-/* Staggered Delay: N (last letter) falls FIRST, P falls LAST */
+/* Reverse Staggered Delay (N falls first, P falls last) */
 .n2 { animation-delay: 0.0s; }
 .o3 { animation-delay: 0.2s; }
 .o2 { animation-delay: 0.4s; }
@@ -101,7 +103,7 @@ body {
 .o1 { animation-delay: 1.8s; }
 .p1 { animation-delay: 2.0s; }
 
-/* Liquidy Pour Down Keyframes */
+/* Liquid Pour Keyframes */
 @keyframes liquidPour {
     0%, 45% {
         transform: translateY(0) scale(1, 1) rotate(0deg);
