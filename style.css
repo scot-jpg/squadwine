@@ -12,8 +12,8 @@
 
 body {
     background: var(--cream-bg);
-    /* Rounded Sans-Serif / Display Category */
-    font-family: 'Fredoka', system-ui, -apple-system, sans-serif !important;
+    font-family: 'Fredoka', sans-serif !important;
+    font-style: normal !important;
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -54,11 +54,12 @@ body {
     width: 12px;
 }
 
-/* Fredoka SemiBold Cartoon Bubble Letter Styling */
+/* Fredoka SemiBold Bubble Letter Styling */
 .bubble-letter {
-    font-family: 'Fredoka', system-ui, -apple-system, sans-serif !important;
+    font-family: 'Fredoka', sans-serif !important;
+    font-style: normal !important;
     font-size: clamp(2rem, 5.5vw, 3.5rem) !important;
-    font-weight: 600 !important; /* Locks Fredoka SemiBold */
+    font-weight: 600 !important;
     display: inline-block;
     line-height: 1;
     letter-spacing: 1px;
@@ -90,7 +91,7 @@ body {
 .o3 { color: #ffd60a; } /* Yellow */
 .n2 { color: #70e000; } /* Lime Green */
 
-/* Reverse Staggered Delay (N falls first, P falls last) */
+/* Reverse Staggered Delay */
 .n2 { animation-delay: 0.0s; }
 .o3 { animation-delay: 0.2s; }
 .o2 { animation-delay: 0.4s; }
@@ -103,14 +104,14 @@ body {
 .o1 { animation-delay: 1.8s; }
 .p1 { animation-delay: 2.0s; }
 
-/* Liquid Pour Keyframes */
+/* Liquid Pour Keyframes (Straight vertical fall, no slant) */
 @keyframes liquidPour {
     0%, 45% {
-        transform: translateY(0) scale(1, 1) rotate(0deg);
+        transform: translateY(0) scale(1, 1);
         opacity: 1;
     }
     65% {
-        transform: translateY(110vh) scale(0.5, 2.2) rotate(10deg);
+        transform: translateY(110vh) scale(0.5, 2.2);
         opacity: 0.8;
     }
     66% {
@@ -118,7 +119,7 @@ body {
         opacity: 0;
     }
     78%, 100% {
-        transform: translateY(0) scale(1, 1) rotate(0deg);
+        transform: translateY(0) scale(1, 1);
         opacity: 1;
     }
 }
