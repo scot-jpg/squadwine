@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squad Wine 🍷</title>
-    <!-- Google Fonts: Fredoka (SemiBold 600) -->
+    <!-- Google Fonts: Fredoka SemiBold (600) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
@@ -40,7 +40,46 @@
             <span class="bubble-letter o3">O</span>
             <span class="bubble-letter n2">N</span>
         </div>
+
+        <!-- Interactive Cellar Section -->
+        <section class="cellar-section">
+            <h2 class="cellar-title">THE VAULT 🍷</h2>
+            <div class="rack-grid">
+                <!-- Bottle 1 -->
+                <div class="wine-bottle" onclick="openNotes('Pet-Nat Pink 2026', 'Natural fizzy goodness. Notes of wild strawberries, ruby grapefruit, and a crisp, yeast-driven finish.', 'img.jpg')">
+                    <div class="bottle-neck"></div>
+                    <div class="bottle-body">
+                        <span class="mini-label">PINK</span>
+                    </div>
+                </div>
+                <!-- Bottle 2 -->
+                <div class="wine-bottle orange-wine" onclick="openNotes('Chilled Orange 2026', 'Skin-contact Pinot Gris. Tangy dried apricot, orange peel, and snappy tannin.', 'img.jpg')">
+                    <div class="bottle-neck"></div>
+                    <div class="bottle-body">
+                        <span class="mini-label">ORANGE</span>
+                    </div>
+                </div>
+                <!-- Bottle 3 -->
+                <div class="wine-bottle red-wine" onclick="openNotes('Chillable Red 2026', 'Light-bodied Syrah blend. Juicy maraschino cherry, violet petals, and crushed slate.', 'img.jpg')">
+                    <div class="bottle-neck"></div>
+                    <div class="bottle-body">
+                        <span class="mini-label">RED</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- Pop-up Modal for Label & Tasting Notes -->
+    <div id="tasting-modal" class="modal-overlay" onclick="closeNotes(event)">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeNotes(true)">&times;</button>
+            <img id="modal-img" src="" alt="Wine Label" class="modal-label-img">
+            <h3 id="modal-title"></h3>
+            <p id="modal-notes"></p>
+        </div>
+    </div>
 
     <!-- Liquid SVG Filter -->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
@@ -52,6 +91,22 @@
             </filter>
         </defs>
     </svg>
+
+    <!-- Modal Interaction Script -->
+    <script>
+        function openNotes(title, notes, imgSrc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-notes').innerText = notes;
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('tasting-modal').style.display = 'flex';
+        }
+
+        function closeNotes(event) {
+            if (event === true || event.target.id === 'tasting-modal') {
+                document.getElementById('tasting-modal').style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
