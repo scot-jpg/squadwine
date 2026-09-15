@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Background Wine Drips -->
     <div class="drips-container">
         <div class="drip drip-1"></div>
         <div class="drip drip-2"></div>
@@ -18,39 +17,39 @@
     </div>
 
     <main class="wrapper">
-        <!-- Squad Wine Cartoon Image -->
-        <img src="img.png" alt="Squad Wine" class="squad-logo">
+        <img src="img.jpg" alt="Squad Wine" class="squad-logo">
 
-        <!-- Interactive Cellar Section -->
         <section class="cellar-section">
-            <h2 class="cellar-title">SQUAD WINE - THE CELLAR </h2>
+            <h2 class="cellar-title">THE VAULT 🍷</h2>
             <div class="rack-grid">
-                <!-- Bottle 1: Henschke -->
-                <div class="wine-bottle henenschke-wine" onclick="openNotes('2023 Henschke Keyneton Euphonium', 'Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: now –2048+ \n\n $$', 'henschke.jpg')">
+                <div class="wine-bottle henenschke-wine" onclick="openNotes('2023 Henschke Keyneton Euphonium', 'Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: 2025–2048+', 'henschke.jpg')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">HENSCHKE</span>
                     </div>
                 </div>
-                <!-- Bottle 2: d\'Arenberg -->
-                <div class="wine-bottle darenberg-wine" onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: now–2039.\n\n $$', 'deadarm.jpg')">
+                <div class="wine-bottle darenberg-wine" onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: Now–2039', 'deadarm.jpg')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">DEAD ARM</span>
                     </div>
                 </div>
-                <!-- Bottle 3: Produttori (Updated to barb.jpg) -->
-                <div class="wine-bottle produttori-wine" onclick="openNotes('2022 Produttori del Barbaresco', 'Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: 2026–2040.\n\n $$$', 'barb.jpg')">
+                <div class="wine-bottle produttori-wine" onclick="openNotes('2022 Produttori del Barbaresco', 'Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: 2026–2040', 'barb.jpg')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">BARBARESCO</span>
                     </div>
                 </div>
-                <!-- Bottle 4: Buisson-Battault -->
-                <div class="wine-bottle buisson-wine" onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2026–2033 or if your name ends in Sharp please smash or tip down sink at your leisure and convenience.\n\n $$$$', 'meursault.jpg')">
+                <div class="wine-bottle buisson-wine" onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2026–2038', 'meursault.jpg')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">MEURSAULT</span>
+                    </div>
+                </div>
+                <div class="wine-bottle mystery-wine" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: FOREVER', 'rick-astley-never-gonna-give-you-up.gif')">
+                    <div class="bottle-neck"></div>
+                    <div class="bottle-body">
+                        <span class="mini-label mystery-mark">?</span>
                     </div>
                 </div>
             </div>
@@ -58,7 +57,6 @@
 
     </main>
 
-    <!-- Pop-up Modal for Label & Tasting Notes -->
     <div id="tasting-modal" class="modal-overlay" onclick="closeNotes(event)">
         <div class="modal-card">
             <button class="close-btn" onclick="closeNotes(true)">&times;</button>
@@ -68,7 +66,6 @@
         </div>
     </div>
 
-    <!-- Liquid SVG Filter -->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
         <defs>
             <filter id="goo">
@@ -79,7 +76,6 @@
         </defs>
     </svg>
 
-    <!-- Modal Interaction Script -->
     <script>
         function openNotes(title, notes, imgSrc) {
             document.getElementById('modal-title').innerText = title;
