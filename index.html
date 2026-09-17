@@ -8,14 +8,6 @@
 </head>
 <body>
 
-    <div class="drips-container">
-        <div class="drip drip-1"></div>
-        <div class="drip drip-2"></div>
-        <div class="drip drip-3"></div>
-        <div class="drip drip-4"></div>
-        <div class="drip drip-5"></div>
-    </div>
-
     <!-- Floating Background Particles -->
     <div class="particles-container">
         <span class="particle p1">🍷</span>
@@ -35,10 +27,10 @@
             <div class="cellar-controls">
                 <div class="counter-badge">POURED: <span id="pour-count">0</span> 🍷</div>
                 <div class="filter-group">
-                    <button class="filter-btn active" onclick="filterWine('all')">ALL</button>
-                    <button class="filter-btn" onclick="filterWine('red')">REDS</button>
-                    <button class="filter-btn" onclick="filterWine('white')">WHITES</button>
-                    <button class="filter-btn" onclick="filterWine('mystery')">?</button>
+                    <button class="filter-btn active" onclick="filterWine('all', event)">ALL</button>
+                    <button class="filter-btn" onclick="filterWine('red', event)">REDS</button>
+                    <button class="filter-btn" onclick="filterWine('white', event)">WHITES</button>
+                    <button class="filter-btn" onclick="filterWine('mystery', event)">?</button>
                 </div>
             </div>
 
@@ -96,21 +88,10 @@
         </div>
     </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
-        <defs>
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-        </defs>
-    </svg>
-
     <script>
         let pourCount = 0;
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-        // Synth Sound Generator (No external MP3 files needed!)
         function playPopSound() {
             if (audioCtx.state === 'suspended') audioCtx.resume();
             const osc = audioCtx.createOscillator();
@@ -157,10 +138,10 @@
             }
         }
 
-        function filterWine(type) {
+        function filterWine(type, evt) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
+            evt.target.classList.add('active');
 
             const bottles = document.querySelectorAll('.wine-bottle');
             bottles.forEach(b => {
