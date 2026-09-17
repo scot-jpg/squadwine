@@ -24,7 +24,7 @@ body.dark-mode {
     --border-stroke: 3px solid #f4f1ea !important;
     
     background: linear-gradient(rgba(13, 13, 13, 0.88), rgba(13, 13, 13, 0.92)), 
-                url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat fixed !important;
+                url('https://images.unsplash.com/photo-1688148587501-fddacbd7bdaf?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat fixed !important;
 }
 
 body {
