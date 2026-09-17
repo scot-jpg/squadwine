@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Squad Wine 🍷</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,61 +17,65 @@
         <span class="particle p5">🍷</span>
     </div>
 
-    <!-- Header Controls: Theme & Audio Toggles -->
-    <div class="top-bar">
-        <button id="theme-toggle" class="icon-toggle" onclick="toggleTheme()" title="Toggle Cellar Mode">🌙 CELLAR MODE</button>
-        <button id="audio-toggle" class="icon-toggle" onclick="toggleAmbience()" title="Toggle Cellar Audio">🔇 AMBIENCE OFF</button>
-    </div>
-
     <main class="wrapper">
+        <div class="top-bar">
+            <button id="theme-toggle" class="icon-toggle" onclick="toggleTheme()">🌙 CELLAR MODE</button>
+            <button id="audio-toggle" class="icon-toggle" onclick="toggleAmbience()">🔇 AMBIENCE OFF</button>
+        </div>
+
         <img src="img.jpg" alt="Squad Wine" class="squad-logo">
 
         <section class="cellar-section">
             <h2 class="cellar-title">SQUAD WINE - THE CELLAR</h2>
             
-            <!-- Cellar Stats & Filter Bar -->
             <div class="cellar-controls">
                 <div class="counter-badge">POURED: <span id="pour-count">0</span> 🍷</div>
                 <div class="filter-group">
-                    <button class="filter-btn active" onclick="filterWine('all', event)">ALL</button>
-                    <button class="filter-btn" onclick="filterWine('red', event)">REDS</button>
-                    <button class="filter-btn" onclick="filterWine('white', event)">WHITES</button>
-                    <button class="filter-btn" onclick="filterWine('mystery', event)">?</button>
+                    <button class="filter-btn active" onclick="filterWine('all', this)">ALL</button>
+                    <button class="filter-btn" onclick="filterWine('red', this)">REDS</button>
+                    <button class="filter-btn" onclick="filterWine('white', this)">WHITES</button>
+                    <button class="filter-btn" onclick="filterWine('mystery', this)">?</button>
                 </div>
             </div>
 
             <div class="rack-grid">
-                <div class="wine-bottle henenschke-wine red" onclick="openNotes('2023 Henschke Keyneton Euphonium', 'THIS GUY IS ALWAYS IN KYNETON! Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: now–2048+\n\n $$', 'henschke.jpg', 'Slow-braised beef cheek or a prime ribeye.', '2 AM cold leftover roast beef eaten directly over the sink.')">
+                <!-- Henschke -->
+                <div class="wine-bottle henenschke-wine red" onclick="openNotes('2023 Henschke Keyneton Euphonium', 'THIS GUY IS ALWAYS IN KYNETON! Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: now–2048+\n\n $$', 'henschke.jpg', 'Slow-braised beef cheek, prime ribeye, or roasted venison with juniper.', 'Traditional Sunday roast beef with crispy potatoes and gravy.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">HENSCHKE</span>
                     </div>
                 </div>
-                <div class="wine-bottle darenberg-wine red" onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'HAVE YOU JUST BEEN PUNCHED?! Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: now–2039 \n\n$$', 'deadarm.jpg', 'Charbroiled lamb chops or aged gouda.', 'A dirty halal snack pack or a midnight lamb kebab with extra garlic sauce.')">
+                <!-- d\'Arenberg -->
+                <div class="wine-bottle darenberg-wine red" onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'HAVE YOU JUST BEEN PUNCHED?! Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: now–2039 \n\n$$', 'deadarm.jpg', 'Charbroiled rack of lamb, roasted osso buco, or aged clothbound cheddar.', 'Late-night woodfired pizza or a generous gourmet burger.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">DEAD ARM</span>
                     </div>
                 </div>
-                <div class="wine-bottle produttori-wine red" onclick="openNotes('2022 Produttori del Barbaresco', 'IT\'S BARBARESCO BABY! Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: now–2040\n\n$$$', 'barb.jpg', 'Truffle risotto, duck ragù, or roasted pheasant.', 'Fancy woodfired pepperoni pizza smashed straight out of the delivery box.')">
+                <!-- Produttori -->
+                <div class="wine-bottle produttori-wine red" onclick="openNotes('2022 Produttori del Barbaresco', 'IT\'S BARBARESCO BABY! Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: now–2040\n\n$$$', 'barb.jpg', 'Black truffle risotto, duck ragù tagliatelle, or braised veal ossobuco.', 'Fresh handmade pappardelle with slow-cooked ragù.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">BARBARESCO</span>
                     </div>
                 </div>
-                <div class="wine-bottle buisson-wine white" onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'OUI! OUI! Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2027–2038 or if you are a Sharp smash or tip down the sink at your convenience\n\n$$$$ ', 'meursault.jpg', 'Pan-seared scallops in garlic butter or roasted lobster.', 'A box of 24 air-fried chicken nuggets with sweet & sour sauce.')">
+                <!-- Buisson-Battault -->
+                <div class="wine-bottle buisson-wine white" onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'OUI! OUI! Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2027–2038 or if you are a Sharp smash or tip down the sink at your convenience\n\n$$$$ ', 'meursault.jpg', 'Pan-seared sea scallops in brown butter, butter-poached lobster, or roasted veal chops.', 'Pan-seared salmon fillet with lemon herb butter.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">MEURSAULT</span>
                     </div>
                 </div>
-                <div class="wine-bottle yering-wine white" onclick="openNotes('2017 Yering Station Chardonnay', 'YARRA VALLEY CLASSIC! Elegant and creamy with white peach, grapefruit zest, subtle cashew oak, and a long, crisp mineral finish.\n\nBest Drinking Window: now–2028\n\n$$', 'yering.png', 'Roast chicken with herbs or grilled king salmon.', 'A supermarket hot roast chicken eaten in the car with your bare hands.')">
+                <!-- Yering Station -->
+                <div class="wine-bottle yering-wine white" onclick="openNotes('2017 Yering Station Chardonnay', 'YARRA VALLEY CLASSIC! Elegant and creamy with white peach, grapefruit zest, subtle cashew oak, and a long, crisp mineral finish.\n\nBest Drinking Window: now–2028\n\n$$', 'yering.png', 'Herb-crusted roast chicken, grilled king salmon, or creamy Gruyère soufflé.', 'Classic roast chicken with seasonal green vegetables.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">YERING</span>
                     </div>
                 </div>
-                <div class="wine-bottle mystery-wine mystery" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif', 'Classic English Fish & Chips.', 'A half-eaten bag of salted corn chips and pure nostalgia.')">
+                <!-- Rickroll Mystery -->
+                <div class="wine-bottle mystery-wine mystery" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif', 'Classic Beer-Battered English Fish & Chips.', 'A bowl of salted party chips and pure 80s nostalgia.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label mystery-mark">?</span>
@@ -79,10 +83,8 @@
                 </div>
             </div>
 
-            <!-- Sommelier Dice Action Button -->
             <button class="dice-btn" onclick="rollSommelier()">🎲 SOMMELIER DICE</button>
         </section>
-
     </main>
 
     <div id="tasting-modal" class="modal-overlay" onclick="closeNotes(event)">
@@ -92,7 +94,6 @@
             <h3 id="modal-title"></h3>
             <p id="modal-notes"></p>
             
-            <!-- Food Pairings Section -->
             <div class="pairing-container">
                 <div class="pairing-box">
                     <strong>🍷 SOMM PAIRING:</strong>
@@ -109,11 +110,20 @@
     <script>
         let pourCount = 0;
         let isAmbienceOn = false;
+        let audioCtx = null;
         let noiseNode = null;
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
 
         function playPopSound() {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
+            initAudio();
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
             osc.type = 'sine';
@@ -128,7 +138,7 @@
         }
 
         function playClinkSound() {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
+            initAudio();
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
             osc.type = 'triangle';
@@ -142,16 +152,15 @@
         }
 
         function toggleAmbience() {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
+            initAudio();
             const btn = document.getElementById('audio-toggle');
             
             if (!isAmbienceOn) {
-                // Generate subtle ambient hum
                 const bufferSize = audioCtx.sampleRate * 2;
                 const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
                 const output = noiseBuffer.getChannelData(0);
                 for (let i = 0; i < bufferSize; i++) {
-                    output[i] = (Math.random() * 2 - 1) * 0.015; // Low volume vinyl crackle/hum
+                    output[i] = (Math.random() * 2 - 1) * 0.02;
                 }
 
                 noiseNode = audioCtx.createBufferSource();
@@ -160,7 +169,7 @@
                 
                 const filter = audioCtx.createBiquadFilter();
                 filter.type = 'lowpass';
-                filter.frequency.setValueAtTime(400, audioCtx.currentTime);
+                filter.frequency.setValueAtTime(300, audioCtx.currentTime);
 
                 noiseNode.connect(filter);
                 filter.connect(audioCtx.destination);
@@ -206,10 +215,10 @@
             }
         }
 
-        function filterWine(type, evt) {
+        function filterWine(type, btnEl) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(b => b.classList.remove('active'));
-            evt.target.classList.add('active');
+            if (btnEl) btnEl.classList.add('active');
 
             const bottles = document.querySelectorAll('.wine-bottle');
             bottles.forEach(b => {
