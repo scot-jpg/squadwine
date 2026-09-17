@@ -17,6 +17,12 @@
         <span class="particle p5">🍷</span>
     </div>
 
+    <!-- Header Controls: Theme & Audio Toggles -->
+    <div class="top-bar">
+        <button id="theme-toggle" class="icon-toggle" onclick="toggleTheme()" title="Toggle Cellar Mode">🌙 CELLAR MODE</button>
+        <button id="audio-toggle" class="icon-toggle" onclick="toggleAmbience()" title="Toggle Cellar Audio">🔇 AMBIENCE OFF</button>
+    </div>
+
     <main class="wrapper">
         <img src="img.jpg" alt="Squad Wine" class="squad-logo">
 
@@ -35,37 +41,37 @@
             </div>
 
             <div class="rack-grid">
-                <div class="wine-bottle henenschke-wine red" onclick="openNotes('2023 Henschke Keyneton Euphonium', 'THIS GUY IS ALWAYS IN KYNETON! Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: now–2048+\n\n $$', 'henschke.jpg')">
+                <div class="wine-bottle henenschke-wine red" onclick="openNotes('2023 Henschke Keyneton Euphonium', 'THIS GUY IS ALWAYS IN KYNETON! Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: now–2048+\n\n $$', 'henschke.jpg', 'Slow-braised beef cheek or a prime ribeye.', '2 AM cold leftover roast beef eaten directly over the sink.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">HENSCHKE</span>
                     </div>
                 </div>
-                <div class="wine-bottle darenberg-wine red" onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'HAVE YOU JUST BEEN PUNCHED?! Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: now–2039 \n\n$$', 'deadarm.jpg')">
+                <div class="wine-bottle darenberg-wine red" onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'HAVE YOU JUST BEEN PUNCHED?! Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: now–2039 \n\n$$', 'deadarm.jpg', 'Charbroiled lamb chops or aged gouda.', 'A dirty halal snack pack or a midnight lamb kebab with extra garlic sauce.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">DEAD ARM</span>
                     </div>
                 </div>
-                <div class="wine-bottle produttori-wine red" onclick="openNotes('2022 Produttori del Barbaresco', 'IT\'S BARBARESCO BABY! Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: now–2040\n\n$$$', 'barb.jpg')">
+                <div class="wine-bottle produttori-wine red" onclick="openNotes('2022 Produttori del Barbaresco', 'IT\'S BARBARESCO BABY! Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: now–2040\n\n$$$', 'barb.jpg', 'Truffle risotto, duck ragù, or roasted pheasant.', 'Fancy woodfired pepperoni pizza smashed straight out of the delivery box.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">BARBARESCO</span>
                     </div>
                 </div>
-                <div class="wine-bottle buisson-wine white" onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'OUI! OUI! Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2027–2038 or if you are a Sharp smash or tip down the sink at your convenience\n\n$$$$ ', 'meursault.jpg')">
+                <div class="wine-bottle buisson-wine white" onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'OUI! OUI! Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2027–2038 or if you are a Sharp smash or tip down the sink at your convenience\n\n$$$$ ', 'meursault.jpg', 'Pan-seared scallops in garlic butter or roasted lobster.', 'A box of 24 air-fried chicken nuggets with sweet & sour sauce.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">MEURSAULT</span>
                     </div>
                 </div>
-                <div class="wine-bottle yering-wine white" onclick="openNotes('2017 Yering Station Chardonnay', 'YARRA VALLEY CLASSIC! Elegant and creamy with white peach, grapefruit zest, subtle cashew oak, and a long, crisp mineral finish.\n\nBest Drinking Window: now–2028\n\n$$', 'yering.png')">
+                <div class="wine-bottle yering-wine white" onclick="openNotes('2017 Yering Station Chardonnay', 'YARRA VALLEY CLASSIC! Elegant and creamy with white peach, grapefruit zest, subtle cashew oak, and a long, crisp mineral finish.\n\nBest Drinking Window: now–2028\n\n$$', 'yering.png', 'Roast chicken with herbs or grilled king salmon.', 'A supermarket hot roast chicken eaten in the car with your bare hands.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label">YERING</span>
                     </div>
                 </div>
-                <div class="wine-bottle mystery-wine mystery" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif')">
+                <div class="wine-bottle mystery-wine mystery" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif', 'Classic English Fish & Chips.', 'A half-eaten bag of salted corn chips and pure nostalgia.')">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label mystery-mark">?</span>
@@ -85,11 +91,25 @@
             <img id="modal-img" src="" alt="Wine Label" class="modal-label-img">
             <h3 id="modal-title"></h3>
             <p id="modal-notes"></p>
+            
+            <!-- Food Pairings Section -->
+            <div class="pairing-container">
+                <div class="pairing-box">
+                    <strong>🍷 SOMM PAIRING:</strong>
+                    <span id="pro-pairing"></span>
+                </div>
+                <div class="pairing-box squad-box">
+                    <strong>🍕 SQUAD PAIRING:</strong>
+                    <span id="squad-pairing"></span>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
         let pourCount = 0;
+        let isAmbienceOn = false;
+        let noiseNode = null;
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
         function playPopSound() {
@@ -121,13 +141,61 @@
             osc.stop(audioCtx.currentTime + 0.25);
         }
 
-        function openNotes(title, notes, imgSrc) {
+        function toggleAmbience() {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const btn = document.getElementById('audio-toggle');
+            
+            if (!isAmbienceOn) {
+                // Generate subtle ambient hum
+                const bufferSize = audioCtx.sampleRate * 2;
+                const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const output = noiseBuffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    output[i] = (Math.random() * 2 - 1) * 0.015; // Low volume vinyl crackle/hum
+                }
+
+                noiseNode = audioCtx.createBufferSource();
+                noiseNode.buffer = noiseBuffer;
+                noiseNode.loop = true;
+                
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(400, audioCtx.currentTime);
+
+                noiseNode.connect(filter);
+                filter.connect(audioCtx.destination);
+                noiseNode.start();
+                
+                btn.innerText = "🔊 AMBIENCE ON";
+                btn.classList.add("active");
+                isAmbienceOn = true;
+            } else {
+                if (noiseNode) noiseNode.stop();
+                btn.innerText = "🔇 AMBIENCE OFF";
+                btn.classList.remove("active");
+                isAmbienceOn = false;
+            }
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.getElementById('theme-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                btn.innerText = "☀️ LIGHT MODE";
+            } else {
+                btn.innerText = "🌙 CELLAR MODE";
+            }
+        }
+
+        function openNotes(title, notes, imgSrc, proPairing, squadPairing) {
             playPopSound();
             pourCount++;
             document.getElementById('pour-count').innerText = pourCount;
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-notes').innerText = notes;
             document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('pro-pairing').innerText = proPairing;
+            document.getElementById('squad-pairing').innerText = squadPairing;
             document.getElementById('tasting-modal').style.display = 'flex';
         }
 
