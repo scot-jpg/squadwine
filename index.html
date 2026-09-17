@@ -20,7 +20,7 @@
     <main class="wrapper">
         <div class="top-bar">
             <button id="theme-toggle" class="icon-toggle" onclick="toggleTheme()">🌙 CELLAR MODE</button>
-            <button id="audio-toggle" class="icon-toggle" onclick="toggleAmbience()">🔇 JAZZ ON</button>
+            <button id="audio-toggle" class="icon-toggle" onclick="toggleAmbience()">🎷 JAZZ ON</button>
         </div>
 
         <img src="img.jpg" alt="Squad Wine" class="squad-logo">
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <!-- Rickroll Mystery -->
-                <div class="wine-bottle mystery-wine mystery" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif', 'Fish & Chips, Salty Snacks, and Good Vibes')">
+                <div class="wine-bottle mystery-wine mystery" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif', null)">
                     <div class="bottle-neck"></div>
                     <div class="bottle-body">
                         <span class="mini-label mystery-mark">?</span>
@@ -94,7 +94,7 @@
             <h3 id="modal-title"></h3>
             <p id="modal-notes"></p>
             
-            <div class="pairing-container">
+            <div id="pairing-container" class="pairing-container">
                 <div class="pairing-box">
                     <strong>🍽️ PAIRING:</strong>
                     <span id="food-pairing"></span>
@@ -134,28 +134,13 @@
             osc.stop(audioCtx.currentTime + 0.08);
         }
 
-        function playClinkSound() {
-            initAudio();
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.type = 'triangle';
-            osc.frequency.setValueAtTime(1800, audioCtx.currentTime);
-            gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.25);
-        }
-
-        // Web Audio Jazz Chord Generator
         function playJazzChord() {
             if (!isAmbienceOn) return;
             const chords = [
-                [261.63, 329.63, 392.00, 493.88], // Cmaj7
-                [220.00, 261.63, 329.63, 392.00], // Am7
-                [146.83, 174.61, 220.00, 261.63], // Dm7
-                [196.00, 246.94, 293.66, 349.23]  // G7
+                [261.63, 329.63, 392.00, 493.88],
+                [220.00, 261.63, 329.63, 392.00],
+                [146.83, 174.61, 220.00, 261.63],
+                [196.00, 246.94, 293.66, 349.23]
             ];
             const chord = chords[Math.floor(Math.random() * chords.length)];
             
@@ -181,7 +166,6 @@
             const btn = document.getElementById('audio-toggle');
             
             if (!isAmbienceOn) {
-                // Vinyl Crackle Noise
                 const bufferSize = audioCtx.sampleRate * 2;
                 const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
                 const output = noiseBuffer.getChannelData(0);
@@ -201,18 +185,17 @@
                 filter.connect(audioCtx.destination);
                 noiseNode.start();
 
-                // Start Jazz Progression
                 isAmbienceOn = true;
                 playJazzChord();
                 jazzInterval = setInterval(playJazzChord, 3000);
                 
-                btn.innerText = "🎷 JAZZ ON";
+                btn.innerText = "🔇 JAZZ OFF";
                 btn.classList.add("active");
             } else {
                 isAmbienceOn = false;
                 if (noiseNode) noiseNode.stop();
                 if (jazzInterval) clearInterval(jazzInterval);
-                btn.innerText = "🔇 JAZZ OFF";
+                btn.innerText = "🎷 JAZZ ON";
                 btn.classList.remove("active");
             }
         }
@@ -234,13 +217,20 @@
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-notes').innerText = notes;
             document.getElementById('modal-img').src = imgSrc;
-            document.getElementById('food-pairing').innerText = pairing;
+            
+            const pairingBox = document.getElementById('pairing-container');
+            if (pairing) {
+                document.getElementById('food-pairing').innerText = pairing;
+                pairingBox.style.display = 'flex';
+            } else {
+                pairingBox.style.display = 'none';
+            }
+            
             document.getElementById('tasting-modal').style.display = 'flex';
         }
 
         function closeNotes(event) {
             if (event === true || event.target.id === 'tasting-modal') {
-                playClinkSound();
                 document.getElementById('tasting-modal').style.display = 'none';
             }
         }
