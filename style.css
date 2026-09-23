@@ -154,19 +154,45 @@ body {
     height: 100%;
 }
 
-/* Hotspot Hover Glow Overlay */
-.hotspot {
-    fill: rgba(255, 255, 255, 0);
-    stroke: transparent;
+/* Individual Bottle Group & Lift-out Effects */
+.bottle-group {
     cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+    transform-origin: center bottom;
+}
+
+/* Static Dashed Outline Box */
+.hotspot-frame {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 3px;
+    stroke-dasharray: 6 4;
+    opacity: 0.6;
     transition: all 0.25s ease;
 }
 
-.hotspot:hover, .hotspot:active {
-    fill: rgba(255, 255, 255, 0.2);
+/* Clickable Target Box */
+.bottle-target {
+    fill: rgba(255, 255, 255, 0.05);
+    stroke: transparent;
+    transition: all 0.25s ease;
+}
+
+/* Hover & Active Lift-Out Animation */
+.bottle-group:hover, .bottle-group:active {
+    transform: translateY(-25px) scale(1.04);
+}
+
+.bottle-group:hover .hotspot-frame {
     stroke: #ffffff;
     stroke-width: 4px;
-    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+    stroke-dasharray: none;
+    opacity: 1;
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.6));
+}
+
+.bottle-group:hover .bottle-target {
+    fill: rgba(255, 255, 255, 0.22);
 }
 
 .dice-btn {
