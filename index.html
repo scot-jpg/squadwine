@@ -36,34 +36,46 @@
                 </div>
             </div>
 
-            <!-- Interactive Cellar Image Map -->
+            <!-- Interactive Cellar Image Map with Lift-Out Effect -->
             <div class="interactive-cellar">
                 <img src="cellar-rack.jpg" alt="Wine Cellar Rack" class="cellar-bg-img">
 
                 <svg class="cellar-hotspots" viewBox="0 0 1000 600">
                     <!-- Bottle 1: Henschke (Red) -->
-                    <rect class="hotspot red" x="50" y="100" width="110" height="400" rx="20"
-                          onclick="openNotes('2023 Henschke Keyneton Euphonium', 'THIS GUY IS ALWAYS IN KYNETON! Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: now–2048+\n\n $$', 'henschke.jpg', 'Beef, Lamb, Venison, and Hard Cheeses')" />
+                    <g class="bottle-group red" onclick="openNotes('2023 Henschke Keyneton Euphonium', 'THIS GUY IS ALWAYS IN KYNETON! Barossa blend (Shiraz/Cabernet). Fresh plum, mulberry, anise, and crushed herbs with fine-grained tannins.\n\nBest Drinking Window: now–2048+\n\n $$', 'henschke.jpg', 'Beef, Lamb, Venison, and Hard Cheeses')">
+                        <rect class="hotspot-frame" x="50" y="100" width="110" height="400" rx="16" />
+                        <rect class="bottle-target" x="55" y="105" width="100" height="390" rx="14" />
+                    </g>
 
                     <!-- Bottle 2: Dead Arm (Red) -->
-                    <rect class="hotspot red" x="200" y="100" width="110" height="400" rx="20"
-                          onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'HAVE YOU JUST BEEN PUNCHED?! Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: now–2039 \n\n$$', 'deadarm.jpg', 'Prime Rib, Barbecue Pork, Lamb, and Charcuterie')" />
+                    <g class="bottle-group red" onclick="openNotes('2019 d\'Arenberg The Dead Arm Shiraz', 'HAVE YOU JUST BEEN PUNCHED?! Bold & concentrated McLaren Vale Shiraz. Dark cherry, mocha, licorice, and tapenade with structured tannins.\n\nBest Drinking Window: now–2039 \n\n$$', 'deadarm.jpg', 'Prime Rib, Barbecue Pork, Lamb, and Charcuterie')">
+                        <rect class="hotspot-frame" x="200" y="100" width="110" height="400" rx="16" />
+                        <rect class="bottle-target" x="205" y="105" width="100" height="390" rx="14" />
+                    </g>
 
                     <!-- Bottle 3: Barbaresco (Red) -->
-                    <rect class="hotspot red" x="350" y="100" width="110" height="400" rx="20"
-                          onclick="openNotes('2022 Produttori del Barbaresco', 'IT\'S BARBARESCO BABY! Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: now–2040\n\n$$$', 'barb.jpg', 'Duck, Truffles, Roast Pork, Pasta Ragù, and Veal')" />
+                    <g class="bottle-group red" onclick="openNotes('2022 Produttori del Barbaresco', 'IT\'S BARBARESCO BABY! Pure Italian Nebbiolo. Ripe raspberry liqueur, dark cherry, orange peel, and violet notes with taut, refined tannins.\n\nBest Drinking Window: now–2040\n\n$$$', 'barb.jpg', 'Duck, Truffles, Roast Pork, Pasta Ragù, and Veal')">
+                        <rect class="hotspot-frame" x="350" y="100" width="110" height="400" rx="16" />
+                        <rect class="bottle-target" x="355" y="105" width="100" height="390" rx="14" />
+                    </g>
 
                     <!-- Bottle 4: Meursault (White) -->
-                    <rect class="hotspot white" x="500" y="100" width="110" height="400" rx="20"
-                          onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'OUI! OUI! Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2027–2038 or if you are a Sharp smash or tip down the sink at your convenience\n\n$$$$ ', 'meursault.jpg', 'Lobster, Scallops, Shellfish, Poultry, and Cream Sauces')" />
+                    <g class="bottle-group white" onclick="openNotes('2023 Domaine Buisson-Battault Meursault Vieilles Vignes', 'OUI! OUI! Classic White Burgundy. Vibrant golden apple, roasted hazelnut, white flowers, and citrus oil backed by flinty minerality and rich texture.\n\nBest Drinking Window: 2027–2038 or if you are a Sharp smash or tip down the sink at your convenience\n\n$$$$ ', 'meursault.jpg', 'Lobster, Scallops, Shellfish, Poultry, and Cream Sauces')">
+                        <rect class="hotspot-frame" x="500" y="100" width="110" height="400" rx="16" />
+                        <rect class="bottle-target" x="505" y="105" width="100" height="390" rx="14" />
+                    </g>
 
                     <!-- Bottle 5: Yering (White) -->
-                    <rect class="hotspot white" x="650" y="100" width="110" height="400" rx="20"
-                          onclick="openNotes('2017 Yering Station Chardonnay', 'YARRA VALLEY CLASSIC! Elegant and creamy with white peach, grapefruit zest, subtle cashew oak, and a long, crisp mineral finish.\n\nBest Drinking Window: now–2028\n\n$$', 'yering.png', 'Roast Chicken, Salmon, White Fish, Pork Tenderloin, and Soft Cheeses')" />
+                    <g class="bottle-group white" onclick="openNotes('2017 Yering Station Chardonnay', 'YARRA VALLEY CLASSIC! Elegant and creamy with white peach, grapefruit zest, subtle cashew oak, and a long, crisp mineral finish.\n\nBest Drinking Window: now–2028\n\n$$', 'yering.png', 'Roast Chicken, Salmon, White Fish, Pork Tenderloin, and Soft Cheeses')">
+                        <rect class="hotspot-frame" x="650" y="100" width="110" height="400" rx="16" />
+                        <rect class="bottle-target" x="655" y="105" width="100" height="390" rx="14" />
+                    </g>
 
                     <!-- Bottle 6: Mystery Bottle -->
-                    <rect class="hotspot mystery" x="800" y="100" width="110" height="400" rx="20"
-                          onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif', null)" />
+                    <g class="bottle-group mystery" onclick="openNotes('YOU GOT RICK ROLLED! 🍷🕺', 'Never gonna give you up,\nNever gonna let you down,\nNever gonna run around and desert you!\n\nBest Drinking Window: ALL TIME', 'rick-astley-never-gonna-give-you-up.gif', null)">
+                        <rect class="hotspot-frame" x="800" y="100" width="110" height="400" rx="16" />
+                        <rect class="bottle-target" x="805" y="105" width="100" height="390" rx="14" />
+                    </g>
                 </svg>
             </div>
 
@@ -224,22 +236,22 @@
             buttons.forEach(b => b.classList.remove('active'));
             if (btnEl) btnEl.classList.add('active');
 
-            const spots = document.querySelectorAll('.hotspot');
-            spots.forEach(s => {
-                if (type === 'all' || s.classList.contains(type)) {
-                    s.style.opacity = '1';
-                    s.style.pointerEvents = 'auto';
+            const groups = document.querySelectorAll('.bottle-group');
+            groups.forEach(g => {
+                if (type === 'all' || g.classList.contains(type)) {
+                    g.style.opacity = '1';
+                    g.style.pointerEvents = 'auto';
                 } else {
-                    s.style.opacity = '0';
-                    s.style.pointerEvents = 'none';
+                    g.style.opacity = '0.15';
+                    g.style.pointerEvents = 'none';
                 }
             });
         }
 
         function rollSommelier() {
-            const visibleSpots = Array.from(document.querySelectorAll('.hotspot')).filter(s => s.style.opacity !== '0');
-            const randomSpot = visibleSpots[Math.floor(Math.random() * visibleSpots.length)];
-            randomSpot.dispatchEvent(new Event('click'));
+            const visibleGroups = Array.from(document.querySelectorAll('.bottle-group')).filter(g => g.style.opacity !== '0.15');
+            const randomGroup = visibleGroups[Math.floor(Math.random() * visibleGroups.length)];
+            randomGroup.dispatchEvent(new Event('click'));
         }
     </script>
 
